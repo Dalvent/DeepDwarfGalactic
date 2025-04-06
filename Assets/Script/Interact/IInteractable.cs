@@ -4,7 +4,7 @@ namespace Script.Interact
 {
     public interface IInteractable
     {
-        void Interact();
+        void Interact(DwarfInteraction dwarf);
         PopupInfo GetPopupInfo();
     }
     

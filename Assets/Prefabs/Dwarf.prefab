@@ -43,8 +43,11 @@ GameObject:
   - component: {fileID: 8989810823404236848}
   - component: {fileID: 5767249622697452024}
   - component: {fileID: 5805159887684415119}
+  - component: {fileID: 5524164178659434113}
+  - component: {fileID: 4964998181549448064}
   - component: {fileID: 4763855581178811581}
   - component: {fileID: 7327949472059679247}
+  - component: {fileID: 1964752510792463924}
   m_Layer: 0
   m_Name: Dwarf
   m_TagString: Untagged
@@ -62,7 +65,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: -1.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 760535646950677728}
@@ -111,8 +114,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_SortingOrder: -2
+  m_Sprite: {fileID: -8777784417420518194, guid: f878e9b43aca9e54386b570753ce0421, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,14 +138,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c428f866b32e12447a45272efec1444b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigidbody2D: {fileID: 4763855581178811581}
-  MoveSpeed: 5
-  jumpForce: 10
+  rb: {fileID: 4763855581178811581}
+  col: {fileID: 7327949472059679247}
+  animator: {fileID: 0}
+  maxSpeed: 6
+  acceleration: 50
+  groundDeceleration: 999
+  airDeceleration: 30
+  jumpPower: 14
+  coyoteTime: 0.15
+  jumpBufferTime: 0.2
+  groundingForce: -1.5
+  fallAcceleration: 44.1
+  maxFallSpeed: 5.8
+  jumpEndEarlyGravityModifier: 3.51
   groundCheck: {fileID: 760535646950677728}
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  snapInput: 0
+  horizontalDeadZoneThreshold: 0.1
+  verticalDeadZoneThreshold: 0.3
+  EnableInput: 1
 --- !u!114 &5805159887684415119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,10 +173,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed004e1e94354626904cbda9685c8177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractRadius: 2
-  InteractableLayer:
+  DwarfStateWithAnimation: {fileID: 5524164178659434113}
+  InteractRadius: 1.16
+  InDrillInteractableLayer:
     serializedVersion: 2
     m_Bits: 128
+  OutDrillInteractableLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &5524164178659434113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3971899388734989934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee76b0323a584ff980be3011eba83225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DwarfMovement: {fileID: 5767249622697452024}
+  DwarfInteraction: {fileID: 5805159887684415119}
+  DwarfLadderMovement: {fileID: 4964998181549448064}
+--- !u!114 &4964998181549448064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3971899388734989934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008acb88287460bb8949936fabcd298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &4763855581178811581
 Rigidbody2D:
   serializedVersion: 5
@@ -178,7 +227,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -221,5 +270,21 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.69, y: 2}
   m_Direction: 0
+--- !u!114 &1964752510792463924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3971899388734989934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7bef96ccfca3c145acb956543e8909b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollectRadius: 0.76
+  CollectorLayer:
+    serializedVersion: 2
+    m_Bits: 512

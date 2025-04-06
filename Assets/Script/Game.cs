@@ -1,64 +1,84 @@
 using Script;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour
 {
-    private GameStats _gameStats;
-    
+    public DrillingWorld DrillingWorld;
+    public GameStats GameStats;
     public GameUI GameUI;
     public PopupManager PopupManager;
     public GameSettings GameSettings;
+    public DrillAccelerator DrillAccelerator;
     public static Game Instance { get; private set; }
 
     private float Diamonds
     {
-        get => _gameStats.Diamonds;
+        get => GameStats.Diamonds;
         set
         {
-            if (_gameStats.Diamonds == value)
+            if (GameStats.Diamonds == value)
                 return;
 
-            _gameStats.Diamonds = value;
-            GameUI.UpdateDiamonds(_gameStats.Diamonds);
+            GameStats.Diamonds = value;
+            GameUI.UpdateDiamonds(GameStats.Diamonds);
+        }
+    }
+
+    public float Depth
+    {
+        get => GameStats.Depth;
+        private set
+        {
+            if (GameStats.Depth == value)
+                return;
+
+            GameStats.Depth = value;
+            GameUI.UpdateDepth(GameStats.Depth);
         }
     }
     
-    private float DrillFuel
+    public void Update()
     {
-        get => _gameStats.DrillFuel;
-        set
-        {
-            if (_gameStats.DrillFuel == value)
-                return;
-
-            _gameStats.DrillFuel = value;
-            GameUI.UpdateFuel(_gameStats.DrillFuel);
-        }
+        DrillAccelerator.CalculateInUpdate();
+        
+        Depth += Time.deltaTime * DrillAccelerator.CurrentSpeed;
     }
 
     public bool ThrowDiamondToFurnace()
     {
-        if (_gameStats.Diamonds <= 0)
+        if (GameStats.Diamonds <= 0)
             return false;
         
         Diamonds--;
-        DrillFuel += GameSettings.FuelPerDiamond;
+        DrillAccelerator.NitroFuel += GameSettings.FuelPerDiamond;
         return true;
     }
     
     void Awake()
     {
         Instance = this;
-        _gameStats = new GameStats()
+        GameStats = new GameStats()
         {
             Depth = GameSettings.StartDepth,
             Diamonds = GameSettings.StartDiamond,
             DrillFuel = GameSettings.StartFuel,
-            DwarfHP = GameSettings.StartHP
+            MaxSpeed = GameSettings.MaxSpeed,
+            MinSpeed = GameSettings.MinSpeed,
+            SpeedLinerAcceleration = GameSettings.SpeedLinerAcceleration,
+            SpeedLoseFactor = GameSettings.SpeedLoseFactor,
+            DecayExponent = GameSettings.DecayExponent
         };
+
+        DrillAccelerator = new DrillAccelerator(GameStats, GameUI, GameSettings);
         
-        GameUI.UpdateDepth(_gameStats.Depth);
-        GameUI.UpdateDiamonds(_gameStats.Diamonds);
-        GameUI.UpdateFuel(_gameStats.DrillFuel);
+        GameUI.UpdateDepth(GameStats.Depth);
+        GameUI.UpdateDiamonds(GameStats.Diamonds);
+        GameUI.UpdateFuel(DrillAccelerator.NitroFuel);
+    }
+
+    public void CollectDiamonds(float count)
+    {
+        Diamonds += count;
     }
 }

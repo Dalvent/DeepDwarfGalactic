@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,8 +7,17 @@ public class GameUI : MonoBehaviour
 {
     public Slider FuelSlider;
     public TMP_Text DiamondsText;
-    public TMP_Text DepthText;
     
+    [Header("Depth")]
+    public Slider DepthSlider;
+    public TMP_Text DepthText;
+    public TMP_Text MaxDepthText;
+
+    public void Start()
+    {
+        MaxDepthText.text = $"{Game.Instance.GameSettings.MaxDepth} m";
+    }
+
     public void UpdateFuel(float fuel)
     {
         FuelSlider.value = fuel / Game.Instance.GameSettings.MaxFuel;
@@ -15,11 +25,12 @@ public class GameUI : MonoBehaviour
     
     public void UpdateDiamonds(float diamonds)
     {
-        DiamondsText.text = $"Diamonds: {diamonds}";
+        DiamondsText.text = $"{diamonds}";
     }
 
     public void UpdateDepth(float depth)
     {
-        DepthText.text = $"Depth: {depth}";
+        DepthText.text = $"{(int)depth} m";
+        DepthSlider.value = depth / Game.Instance.GameSettings.MaxDepth;
     }
 }

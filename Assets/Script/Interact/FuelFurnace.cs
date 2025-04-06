@@ -6,11 +6,13 @@ public class FuelFurnace : MonoBehaviour, IInteractable
     public Vector2 PopupOffset;
     public string PopupText = "Fuel Furnace";
     
-    public void Interact()
+    public void Interact(DwarfInteraction dwarf)
     {
         // TODO: MAKE BLOCKING INTERACTION
         Debug.Log("SEX WITH FURNACE WTFFFFF!");
-        Game.Instance.ThrowDiamondToFurnace();
+        
+        if (Game.Instance.ThrowDiamondToFurnace())
+            dwarf.DwarfStateWithAnimation.InteractWithFurnace();
     }
 
     public PopupInfo GetPopupInfo()

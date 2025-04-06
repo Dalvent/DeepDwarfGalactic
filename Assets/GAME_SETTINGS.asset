@@ -14,7 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxFuel: 100
   StartFuel: 50
-  FuelConsumptionRateBySecond: 1
+  FuelConsumptionRateBySecond: 9.93
   StartDiamond: 5
   FuelPerDiamond: 10
-  StartLives: 3
+  StartDepth: 50
+  MaxDepth: 1000
+  MinSpeed: 1
+  MaxSpeed: 60
+  SpeedLinerAcceleration: 1
+  SpeedLoseFactor: 0.5
+  DecayExponent: 1.2
+  StartHP: 3

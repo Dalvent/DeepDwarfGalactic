@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class DwarfInteraction : MonoBehaviour
 {
+    public DwarfStateWithAnimation DwarfStateWithAnimation;
     public float InteractRadius = 2f;
-    public LayerMask InteractableLayer;
+    public LayerMask InDrillInteractableLayer;
+    public LayerMask OutDrillInteractableLayer;
 
     private IInteractable _currentInteractable;
+
+    public bool IsInDrill { get; set; }
+
+    private LayerMask CurrentInteractableLayer => IsInDrill 
+        ? InDrillInteractableLayer
+        : OutDrillInteractableLayer;
 
     void Update()
     {
         // Поиск интерактивных объектов
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, InteractRadius, InteractableLayer);
-
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, InteractRadius, CurrentInteractableLayer);
         _currentInteractable = null;
         
-        Debug.Log($"Hit somethign {hits.Length}!!");
-        
-        var hit = hits.FirstOrDefault();
+        var hit = hits
+            .OrderBy(hit => Vector2.Distance(transform.position, hit.transform.position))
+            .FirstOrDefault();
         if (hit != null)
         {
             IInteractable interactable = hit.GetComponent<IInteractable>();
@@ -36,7 +43,7 @@ public class DwarfInteraction : MonoBehaviour
 
         if (_currentInteractable != null && Input.GetKeyDown(KeyCode.E))
         {
-            _currentInteractable.Interact();
+            _currentInteractable.Interact(this);
         }
     }
 
