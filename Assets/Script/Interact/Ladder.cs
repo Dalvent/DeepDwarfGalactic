@@ -1,11 +1,14 @@
 using Script.Interact;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Ladder : MonoBehaviour, IInteractable
 {
     public Transform OutDrill;
     public Vector2 PopupOffset;
     public string PopupText;
+
+    [FormerlySerializedAs("InteractCooldown")] public InteractCooldownInfo interactCooldownInfo;
     
     public void Interact(DwarfInteraction dwarf)
     {
@@ -18,7 +21,13 @@ public class Ladder : MonoBehaviour, IInteractable
         {
             Offset = PopupOffset,
             PopupText = PopupText,
-            Transform = transform
+            Transform = transform,
+            Interactable = this
         };
+    }
+
+    public InteractCooldownInfo GetInteractCooldown()
+    {
+        return interactCooldownInfo;
     }
 }

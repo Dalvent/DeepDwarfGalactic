@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 85584079c5696af4b9d70ef816ea9bc9
+guid: 83a0c4a2de629d64198c3eefeffbf37f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6527354334212615715
-    second: gear_0014_0
+      213: -1711719882547383248
+    second: fuel_liquid_0006_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gear_0014_0
+      name: fuel_liquid_0006_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 0
-        width: 131
-        height: 139
+        x: 71
+        y: 42
+        width: 351
+        height: 572
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32e69ddfe22d59a50800000000000000
-      internalID: 6527354334212615715
+      spriteID: 0343acdf5dfbe38e0800000000000000
+      internalID: -1711719882547383248
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      gear_0014_0: 6527354334212615715
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

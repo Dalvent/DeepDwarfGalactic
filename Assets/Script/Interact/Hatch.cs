@@ -1,5 +1,6 @@
 ﻿using Script.Interact;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Hatch : MonoBehaviour, IInteractable
 {
@@ -7,6 +8,7 @@ public class Hatch : MonoBehaviour, IInteractable
     
     public Vector2 PopupOffset;
     public string PopupText;
+    [FormerlySerializedAs("InteractCooldown")] public InteractCooldownInfo interactCooldownInfo;
     
     public void Interact(DwarfInteraction dwarf)
     {
@@ -19,7 +21,13 @@ public class Hatch : MonoBehaviour, IInteractable
         {
             Offset = PopupOffset,
             PopupText = PopupText,
-            Transform = transform
+            Transform = transform,
+            Interactable = this
         };
+    }
+
+    public InteractCooldownInfo GetInteractCooldown()
+    {
+        return interactCooldownInfo;
     }
 }

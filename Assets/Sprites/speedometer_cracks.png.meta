@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 85584079c5696af4b9d70ef816ea9bc9
+guid: cd05325352476264d97f8136f0dd8abd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6527354334212615715
-    second: gear_0014_0
+      213: -662937687559026462
+    second: speedometer_cracks_0
+  - first:
+      213: -888904776062672247
+    second: speedometer_cracks_1
+  - first:
+      213: -5689237951712279485
+    second: speedometer_cracks_2
+  - first:
+      213: 9089317703502829903
+    second: speedometer_cracks_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gear_0014_0
+      name: speedometer_cracks_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 0
-        width: 131
-        height: 139
+        x: 86
+        y: 116
+        width: 29
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32e69ddfe22d59a50800000000000000
-      internalID: 6527354334212615715
+      spriteID: 2e843d08fa5ccc6f0800000000000000
+      internalID: -662937687559026462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: speedometer_cracks_1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 162
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982e2a7d0d9f9a3f0800000000000000
+      internalID: -888904776062672247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: speedometer_cracks_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 53
+        width: 62
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344c48dc934cb01b0800000000000000
+      internalID: -5689237951712279485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: speedometer_cracks_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 42
+        width: 117
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4994f74b4eb32e70800000000000000
+      internalID: 9089317703502829903
       vertices: []
       indices: 
       edges: []
@@ -147,8 +222,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      gear_0014_0: 6527354334212615715
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

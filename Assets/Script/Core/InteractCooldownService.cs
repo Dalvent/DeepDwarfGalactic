@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Script.Interact;
 using UnityEngine;
 
 namespace Script
@@ -14,9 +15,18 @@ namespace Script
         private readonly Dictionary<string, CooldownInfo> _cooldowns = new();
         private List<string> _cooldownToDelete = new();
 
-        public void MakeCooldown(string key, float value)
+        public bool CanInteract(string key)
         {
-            _cooldowns[key] = new CooldownInfo() { TimeLeft = value, TimeRequested = value };
+            return GetPassedPresent(key) >= 1;
+        }
+
+        public void MakeCooldown(InteractCooldownInfo cooldownInfo)
+        {
+            _cooldowns[cooldownInfo.CooldownGroupKey] = new CooldownInfo() 
+            {
+                TimeLeft = cooldownInfo.CooldownTime,
+                TimeRequested = cooldownInfo.CooldownTime 
+            };
         }
 
         public float GetPassedPresent(string key)

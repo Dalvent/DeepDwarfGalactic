@@ -19,7 +19,6 @@ public class PopupManager : MonoBehaviour
         if (_targetInfo != null && _mainCamera != null)
         {
             MovePopupToTarget();
-            _targetInfo.Transform;
         }
     }
 

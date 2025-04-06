@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Script.Interact
 {
@@ -6,17 +7,19 @@ namespace Script.Interact
     {
         void Interact(DwarfInteraction dwarf);
         PopupInfo GetPopupInfo();
-        InteractCooldown GetInteractCooldown();
+        InteractCooldownInfo GetInteractCooldown();
     }
 
-    public class InteractCooldown
+    [Serializable]
+    public class InteractCooldownInfo
     {
-        public string CooldownGroupKey { get; set; }
-        public float CooldownTime { get; set; }
+        public string CooldownGroupKey;
+        public float CooldownTime;
     }
     
     public class PopupInfo
     {
+        public IInteractable Interactable { get; set; }
         public Transform Transform { get; set; }
         public string PopupText { get; set; }
         public Vector2 Offset { get; set; }

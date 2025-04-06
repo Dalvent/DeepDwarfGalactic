@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Script;
 using Script.Interact;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -44,7 +45,14 @@ public class DwarfInteraction : MonoBehaviour
 
         if (_currentInteractable != null && Input.GetKeyDown(KeyCode.E))
         {
-            _currentInteractable.Interact(this);
+            InteractCooldownInfo cooldownInfo = _currentInteractable.GetInteractCooldown();
+            InteractCooldownService cooldownService = Game.Instance.InteractCooldownService;
+            
+            if (cooldownService.CanInteract(cooldownInfo.CooldownGroupKey))
+            {
+                _currentInteractable.Interact(this);
+                cooldownService.MakeCooldown(cooldownInfo);
+            }
         }
     }
 

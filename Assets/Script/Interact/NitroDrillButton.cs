@@ -1,5 +1,4 @@
-﻿using System;
-using Script.Interact;
+﻿using Script.Interact;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -8,6 +7,8 @@ public class NitroDrillButton : MonoBehaviour, IInteractable
     public Vector2 PopupOffset;
     public string PopupText = "Start/Stop Nitro";
 
+    [FormerlySerializedAs("InteractCooldown")] public InteractCooldownInfo interactCooldownInfo;
+    
     public SpriteRenderer SpriteRenderer;
     public Sprite ActiveSprite;
     public Sprite DisableSprite;
@@ -29,8 +30,14 @@ public class NitroDrillButton : MonoBehaviour, IInteractable
         {
             Offset = PopupOffset,
             PopupText = PopupText,
-            Transform = transform
+            Transform = transform,
+            Interactable = this
         };
+    }
+
+    public InteractCooldownInfo GetInteractCooldown()
+    {
+        return interactCooldownInfo;
     }
 
     private void SyncSprites()
