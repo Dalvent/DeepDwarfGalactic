@@ -228,13 +228,11 @@ public class DwarfMovement : MonoBehaviour
         if (animator == null)
             return;
 
-        // Обновляем параметры аниматора для перехода между idle, ходьбой и прыжком
         animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetFloat("VerticalSpeed", rb.linearVelocity.y);
     }
 
-    // Для визуальной отладки проверки земли
     private void OnDrawGizmosSelected()
     {
         if (groundCheck != null)

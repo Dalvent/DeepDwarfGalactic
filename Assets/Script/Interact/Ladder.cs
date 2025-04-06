@@ -9,7 +9,7 @@ public class Ladder : MonoBehaviour, IInteractable
     
     public void Interact(DwarfInteraction dwarf)
     {
-        dwarf.DwarfStateWithAnimation.TakeOutOfDrill(OutDrill.position);
+        dwarf.dwarfSpecialMoves.TakeOutOfDrill(OutDrill.position);
     }
 
     public PopupInfo GetPopupInfo()

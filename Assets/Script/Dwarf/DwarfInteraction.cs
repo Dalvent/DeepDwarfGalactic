@@ -1,10 +1,11 @@
 ﻿using System.Linq;
 using Script.Interact;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DwarfInteraction : MonoBehaviour
 {
-    public DwarfStateWithAnimation DwarfStateWithAnimation;
+    [FormerlySerializedAs("DwarfStateWithAnimation")] public DwarfSpecialMoves dwarfSpecialMoves;
     public float InteractRadius = 2f;
     public LayerMask InDrillInteractableLayer;
     public LayerMask OutDrillInteractableLayer;
