@@ -51,28 +51,25 @@ public class DwarfSpecialMovesWithAnimation : MonoBehaviour
 
     public void InteractWithFurnace()
     {
+        DwarfMovement.Animator.SetTrigger("FurnaceTrow");
         IEnumerator Use()
         {
             DwarfInteraction.enabled = false;
             DwarfMovement.EnableInput = false;
-            
-            if (DwarfMovement.Animator != null)
-            {
-                DwarfMovement.Animator.SetTrigger("ThrowCoal");
-
-                // Ждём, пока текущий клип "Wait" начнёт проигрываться
-                yield return null;
-                while (!DwarfMovement.Animator.GetCurrentAnimatorStateInfo(0).IsName("ThrowCoal"))
-                    yield return null;
-
-                // Ждём, пока он не дойдёт до конца
-                while (DwarfMovement.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
-                    yield return null;
-            }
+            yield return new WaitForSeconds(1f);
             DwarfInteraction.enabled = true;
             DwarfMovement.EnableInput = true;
         }
 
         StartCoroutine(Use());
+    }
+
+    public void OnFurnaceTrowStart()
+    {
+    }
+
+    public void OnFurnaceTrowEnd()
+    {
+        print("SLAVA SHTO TI ZDELAL");
     }
 }

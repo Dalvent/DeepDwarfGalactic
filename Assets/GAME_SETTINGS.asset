@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0e701690cd4b4f9ee1f9c5ae4f1ea6, type: 3}
   m_Name: GAME_SETTINGS
   m_EditorClassIdentifier: 
-  MaxFuel: 100
+  MaxFuel: 857.1
   StartFuel: 50
   FuelConsumptionRateBySecond: 9.93
   StartDiamond: 5
   FuelPerDiamond: 10
   StartDepth: 50
-  MaxDepth: 1000
+  MaxDepth: 15543.2
   MinSpeed: 1
   MaxSpeed: 60
-  SpeedLinerAcceleration: 1
+  SpeedLinerAcceleration: 2
   SpeedLoseFactor: 0.5
   DecayExponent: 1.2
   StartHP: 3
