@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PopupManager : MonoBehaviour
 {
-    [SerializeField] private GameObject PopupUI;
+    [SerializeField] private InteractButtonSlider PopupUI;
 
     private PopupInfo _targetInfo;
     private Camera _mainCamera;
@@ -18,6 +18,8 @@ public class PopupManager : MonoBehaviour
     {
         if (_targetInfo != null && _mainCamera != null)
         {
+            string cooldownGroupKey = _targetInfo.Interactable.GetInteractCooldown().CooldownGroupKey;
+            PopupUI.Persent = Game.Instance.InteractCooldownService.GetPassedPresent(cooldownGroupKey);
             MovePopupToTarget();
         }
     }
@@ -28,13 +30,13 @@ public class PopupManager : MonoBehaviour
         
         MovePopupToTarget();
         
-        PopupUI.SetActive(true);
+        PopupUI.gameObject.SetActive(true);
     }
 
     public void HidePopup()
     {
         _targetInfo = null;
-        PopupUI.SetActive(false);
+        PopupUI.gameObject.SetActive(false);
     }
 
     private void MovePopupToTarget()
