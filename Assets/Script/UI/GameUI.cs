@@ -1,11 +1,10 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
-    public Slider FuelSlider;
+    public LiquidUi LiquidUi;
     public TMP_Text DiamondsText;
     
     [Header("Depth")]
@@ -14,7 +13,7 @@ public class GameUI : MonoBehaviour
 
     public void UpdateFuel(float fuel)
     {
-        FuelSlider.value = fuel / Game.Instance.GameSettings.MaxFuel;
+        LiquidUi.Percent = fuel / Game.Instance.GameSettings.MaxFuel;
     }
     
     public void UpdateDiamonds(float diamonds)

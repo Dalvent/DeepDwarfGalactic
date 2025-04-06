@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1d4d4ff5f821ce14293540ec5077ce6e
+guid: e06fc82abecd48d40a4ea2b4649bc7cd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -977313346054511535
-    second: fuel_liquid_0000_0
+      213: 2063520862101070
+    second: fuel_liquid_0001_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fuel_liquid_0000_0
+      name: fuel_liquid_0001_0
       rect:
         serializedVersion: 2
         x: 69
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1542c2690b2ef62f0800000000000000
-      internalID: -977313346054511535
+      spriteID: e4ed8f3e2c4570000800000000000000
+      internalID: 2063520862101070
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fuel_liquid_0001_0: 2063520862101070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
