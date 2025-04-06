@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mochaStone_0: 1741527227994888568
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

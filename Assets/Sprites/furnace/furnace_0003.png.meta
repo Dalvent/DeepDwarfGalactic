@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      furnace_0003_0: 1225129877740808753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
