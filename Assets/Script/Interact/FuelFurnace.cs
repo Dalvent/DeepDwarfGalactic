@@ -24,4 +24,12 @@ public class FuelFurnace : MonoBehaviour, IInteractable
             PopupText = PopupText
         };
     }
+
+    public InteractCooldown GetInteractCooldown()
+    {
+        return new InteractCooldown()
+        {
+            CooldownTime = 
+        }
+     }
 }

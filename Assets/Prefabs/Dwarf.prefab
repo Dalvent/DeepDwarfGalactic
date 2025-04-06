@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 4763855581178811581}
   - component: {fileID: 7327949472059679247}
   - component: {fileID: 1964752510792463924}
+  - component: {fileID: 855785512984516428}
   m_Layer: 0
   m_Name: Dwarf
   m_TagString: Untagged
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4763855581178811581}
   col: {fileID: 7327949472059679247}
-  animator: {fileID: 0}
+  Animator: {fileID: 855785512984516428}
   maxSpeed: 6
   acceleration: 50
   groundDeceleration: 999
@@ -173,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed004e1e94354626904cbda9685c8177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DwarfStateWithAnimation: {fileID: 5524164178659434113}
+  dwarfSpecialMovesWithAnimation: {fileID: 5524164178659434113}
   InteractRadius: 1.16
   InDrillInteractableLayer:
     serializedVersion: 2
@@ -288,3 +289,25 @@ MonoBehaviour:
   CollectorLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!95 &855785512984516428
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3971899388734989934}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b73b691a0ce79634ea61585ad1792b2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

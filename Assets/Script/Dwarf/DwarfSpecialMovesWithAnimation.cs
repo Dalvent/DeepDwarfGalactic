@@ -52,24 +52,23 @@ public class DwarfSpecialMovesWithAnimation : MonoBehaviour
     public void InteractWithFurnace()
     {
         DwarfMovement.Animator.SetTrigger("FurnaceTrow");
-        IEnumerator Use()
+        /*IEnumerator Use()
         {
-            DwarfInteraction.enabled = false;
-            DwarfMovement.EnableInput = false;
             yield return new WaitForSeconds(1f);
-            DwarfInteraction.enabled = true;
-            DwarfMovement.EnableInput = true;
         }
 
-        StartCoroutine(Use());
+        StartCoroutine(Use());*/
     }
 
     public void OnFurnaceTrowStart()
     {
+        DwarfInteraction.enabled = false;
+        DwarfMovement.EnableInput = false;
     }
 
     public void OnFurnaceTrowEnd()
     {
-        print("SLAVA SHTO TI ZDELAL");
+        DwarfInteraction.enabled = true;
+        DwarfMovement.EnableInput = true;
     }
 }
