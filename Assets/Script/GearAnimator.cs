@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
-public class DrillAnimator : MonoBehaviour
+public class GearAnimator : MonoBehaviour
 {
-    [Header("Drill")]
-    public SpriteRenderer DrillSr;
-    public Sprite[] DrillSprites;
+    [Header("Gear")]
+    public SpriteRenderer GearSr;
+    public Sprite[] GearSprites;
     
     [Header("Values")]
     public float ChangeSpriteSpeedMultiplayer;
-    
+
     private int _currentSpriteIndex;
     private float _currentTimer;
     
@@ -18,10 +17,10 @@ public class DrillAnimator : MonoBehaviour
         if (_currentTimer >= CalculateNextTimeToSprite())
         {
             _currentSpriteIndex++;
-            if (_currentSpriteIndex >= DrillSprites.Length)
+            if (_currentSpriteIndex >= GearSprites.Length)
                 _currentSpriteIndex = 0;
             
-            DrillSr.sprite = DrillSprites[_currentSpriteIndex];
+            GearSr.sprite = GearSprites[_currentSpriteIndex];
 
             _currentTimer = 0f;
         }
