@@ -6,8 +6,14 @@ public class DrillingWorld : MonoBehaviour
     public CameraShaker CameraShaker;
     private float _startY;
     public float ShakeReducer = 0.2f;
-    public bool UseNitro { get; set; }
 
+    [Header("ShakeAfterUser")]
+    public float ShakeAfterNitroTime = 0.2f;
+    public float ShakeAfterPower = 0.75f;
+
+    private float _forceShakeTime;
+    private bool _lastNitroStatus = false;
+    
     public void Awake()
     {
         _startY = transform.position.y;
@@ -15,13 +21,26 @@ public class DrillingWorld : MonoBehaviour
 
     public void Update()
     {
+        if (_lastNitroStatus == false && Game.Instance.DrillAccelerator.UseNitro)
+        {
+            _forceShakeTime = ShakeAfterNitroTime;
+        }
+        
+        _lastNitroStatus = Game.Instance.DrillAccelerator.UseNitro;
+
+
         float depth = Game.Instance.Depth + _startY - Game.Instance.GameSettings.StartDepth;
         transform.position = transform.position.SetY(depth);
-        
-        bool isSpeedFast = Game.Instance.GameSettings.MaxSpeed / 2 < Game.Instance.DrillAccelerator.CurrentSpeed;
 
-        ShakeReducer = 0.2f;
-        CameraShaker.shakeMagnitude = Game.Instance.DrillAccelerator.CurrentSpeed / Game.Instance.GameSettings.MaxSpeed * ShakeReducer; 
-        CameraShaker.IsShaking = true;
+        if (_forceShakeTime <= 0)
+        {
+            CameraShaker.shakeMagnitude = Game.Instance.DrillAccelerator.CurrentSpeed / Game.Instance.GameSettings.MaxSpeed * ShakeReducer;
+            CameraShaker.IsShaking = true;
+        }
+        else
+        {
+            CameraShaker.shakeMagnitude = ShakeAfterPower;
+            _forceShakeTime -= Time.deltaTime;
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace Script
             _gameStats = gameStats;
             _gameUI = gameUI;
             _gameSettings = gameSettings;
+            _nitroFuel = _gameStats.DrillFuel;
         }
         
         public bool UseNitro { get; set; }
