@@ -10,6 +10,7 @@ public class Game : MonoBehaviour
     public PopupManager PopupManager;
     public GameSettings GameSettings;
     public DrillAccelerator DrillAccelerator;
+    public InteractCooldownService InteractCooldownService = new();
     public static Game Instance { get; private set; }
 
     private float Diamonds
@@ -43,6 +44,7 @@ public class Game : MonoBehaviour
         DrillAccelerator.CalculateInUpdate();
         
         Depth += Time.deltaTime * DrillAccelerator.CurrentSpeed;
+        InteractCooldownService.OnUpdate();
     }
 
     public bool ThrowDiamondToFurnace()

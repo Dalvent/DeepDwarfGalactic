@@ -17,7 +17,10 @@ public class PopupManager : MonoBehaviour
     void Update()
     {
         if (_targetInfo != null && _mainCamera != null)
+        {
             MovePopupToTarget();
+            _targetInfo.Transform;
+        }
     }
 
     public void ShowPopup(PopupInfo target)

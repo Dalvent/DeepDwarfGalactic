@@ -6,6 +6,13 @@ namespace Script.Interact
     {
         void Interact(DwarfInteraction dwarf);
         PopupInfo GetPopupInfo();
+        InteractCooldown GetInteractCooldown();
+    }
+
+    public class InteractCooldown
+    {
+        public string CooldownGroupKey { get; set; }
+        public float CooldownTime { get; set; }
     }
     
     public class PopupInfo
