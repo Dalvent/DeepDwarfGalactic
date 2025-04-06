@@ -8,7 +8,7 @@ public class DwarfMovement : MonoBehaviour
     [Header("Components")]
     public Rigidbody2D rb;
     public CapsuleCollider2D col;
-    public Animator animator; // Если аниматор не нужен – можно оставить пустым
+    [FormerlySerializedAs("animator")] public Animator Animator; // Если аниматор не нужен – можно оставить пустым
 
     [Header("Movement Settings")]
     [Tooltip("Максимальная скорость по горизонтали")]
@@ -180,8 +180,8 @@ public class DwarfMovement : MonoBehaviour
         coyoteUsable = false;
         frameVelocity.y = jumpPower;
         // Триггер анимации прыжка
-        if (animator != null)
-            animator.SetTrigger("Jump");
+        if (Animator != null)
+            Animator.SetTrigger("Jump");
     }
 
     private void HandleDirection()
@@ -225,12 +225,12 @@ public class DwarfMovement : MonoBehaviour
 
     private void UpdateAnimator()
     {
-        if (animator == null)
+        if (Animator == null)
             return;
 
-        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
-        animator.SetBool("IsGrounded", isGrounded);
-        animator.SetFloat("VerticalSpeed", rb.linearVelocity.y);
+        Animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+        Animator.SetBool("IsGrounded", isGrounded);
+        Animator.SetFloat("VerticalSpeed", rb.linearVelocity.y);
     }
 
     private void OnDrawGizmosSelected()

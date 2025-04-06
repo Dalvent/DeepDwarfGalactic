@@ -10,7 +10,7 @@ public class Hatch : MonoBehaviour, IInteractable
     
     public void Interact(DwarfInteraction dwarf)
     {
-        dwarf.dwarfSpecialMoves.StayInDrill(DrillFloor.position);
+        dwarf.dwarfSpecialMovesWithAnimation.StayInDrill(DrillFloor.position);
     }
 
     public PopupInfo GetPopupInfo()

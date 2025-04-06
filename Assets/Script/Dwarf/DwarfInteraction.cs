@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class DwarfInteraction : MonoBehaviour
 {
-    [FormerlySerializedAs("DwarfStateWithAnimation")] public DwarfSpecialMoves dwarfSpecialMoves;
+    [FormerlySerializedAs("dwarfSpecialMoves")] [FormerlySerializedAs("DwarfStateWithAnimation")] public DwarfSpecialMovesWithAnimation dwarfSpecialMovesWithAnimation;
     public float InteractRadius = 2f;
     public LayerMask InDrillInteractableLayer;
     public LayerMask OutDrillInteractableLayer;

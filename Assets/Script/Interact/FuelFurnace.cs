@@ -12,7 +12,7 @@ public class FuelFurnace : MonoBehaviour, IInteractable
         Debug.Log("SEX WITH FURNACE WTFFFFF!");
         
         if (Game.Instance.ThrowDiamondToFurnace())
-            dwarf.dwarfSpecialMoves.InteractWithFurnace();
+            dwarf.dwarfSpecialMovesWithAnimation.InteractWithFurnace();
     }
 
     public PopupInfo GetPopupInfo()

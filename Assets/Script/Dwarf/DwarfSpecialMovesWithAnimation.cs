@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class DwarfSpecialMoves : MonoBehaviour
+public class DwarfSpecialMovesWithAnimation : MonoBehaviour
 {
     public DwarfMovement DwarfMovement;
     public DwarfInteraction DwarfInteraction;
@@ -55,7 +55,20 @@ public class DwarfSpecialMoves : MonoBehaviour
         {
             DwarfInteraction.enabled = false;
             DwarfMovement.EnableInput = false;
-            yield return new WaitForSeconds(1f);
+            
+            if (DwarfMovement.Animator != null)
+            {
+                DwarfMovement.Animator.SetTrigger("ThrowCoal");
+
+                // Ждём, пока текущий клип "Wait" начнёт проигрываться
+                yield return null;
+                while (!DwarfMovement.Animator.GetCurrentAnimatorStateInfo(0).IsName("ThrowCoal"))
+                    yield return null;
+
+                // Ждём, пока он не дойдёт до конца
+                while (DwarfMovement.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+                    yield return null;
+            }
             DwarfInteraction.enabled = true;
             DwarfMovement.EnableInput = true;
         }
