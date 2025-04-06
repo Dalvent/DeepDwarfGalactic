@@ -11,12 +11,6 @@ public class GameUI : MonoBehaviour
     [Header("Depth")]
     public Slider DepthSlider;
     public TMP_Text DepthText;
-    public TMP_Text MaxDepthText;
-
-    public void Start()
-    {
-        MaxDepthText.text = $"{Game.Instance.GameSettings.MaxDepth} m";
-    }
 
     public void UpdateFuel(float fuel)
     {
