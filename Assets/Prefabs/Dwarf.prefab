@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 760535646950677728}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 7327949472059679247}
   - component: {fileID: 1964752510792463924}
   - component: {fileID: 855785512984516428}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Dwarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}

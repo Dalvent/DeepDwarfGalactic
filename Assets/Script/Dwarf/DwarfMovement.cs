@@ -77,6 +77,11 @@ public class DwarfMovement : MonoBehaviour
     }
     private FrameInput frameInput;
 
+    public void Bounce(float force)
+    {
+        frameVelocity.y = force;
+    }
+
     private void Update()
     {
         time += Time.deltaTime;
@@ -150,6 +155,7 @@ public class DwarfMovement : MonoBehaviour
     }
 
     private bool HasBufferedJump => bufferedJumpUsable && time < timeJumpWasPressed + jumpBufferTime;
+
     private bool CanUseCoyote => coyoteUsable && (!isGrounded) && (time < timeLeftGrounded + coyoteTime);
 
     private void HandleJump()

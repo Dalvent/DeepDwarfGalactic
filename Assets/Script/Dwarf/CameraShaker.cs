@@ -14,30 +14,24 @@ public class CameraShaker : MonoBehaviour
 
     // Флаг, определяющий, происходит ли тряска.
     public bool IsShaking;
-    private Camera _mainCamera;
-
-    private void Awake()
-    {
-        _mainCamera = Camera.main;
-    }
 
     void Start()
     {
         // Сохраняем начальное положение камеры.
-        originalPos = _mainCamera.transform.localPosition;
+        originalPos = transform.localPosition;
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (IsShaking)
         {
             // Применяем случайное смещение.
-            _mainCamera.transform.localPosition = originalPos + Random.insideUnitSphere * shakeMagnitude;
+            transform.localPosition = originalPos + Random.insideUnitSphere * shakeMagnitude;
         }
         else
         {
             // Плавно возвращаем камеру к исходному положению.
-            _mainCamera.transform.localPosition = Vector3.Lerp(_mainCamera.transform.localPosition, originalPos, Time.deltaTime * returnSpeed);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, originalPos, Time.deltaTime * returnSpeed);
         }
     }
 }

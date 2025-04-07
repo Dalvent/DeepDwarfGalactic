@@ -8,8 +8,8 @@ public class DrillingWorld : MonoBehaviour
     public float ShakeReducer = 0.2f;
 
     [Header("ShakeAfterUser")]
-    public float ShakeAfterNitroTime = 0.2f;
-    public float ShakeAfterPower = 0.75f;
+    public float ShakeAfterNitroTime = 0.12f;
+    public float ShakeAfterPower = 0.21f;
 
     private float _forceShakeTime;
     private bool _lastNitroStatus = false;
