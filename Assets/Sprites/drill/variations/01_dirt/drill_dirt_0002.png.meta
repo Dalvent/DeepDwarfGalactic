@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      drill_dirt_0002_0: -1790800926310014905
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

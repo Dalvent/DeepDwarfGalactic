@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      drill_rock_0000_0: 210942893966035897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
