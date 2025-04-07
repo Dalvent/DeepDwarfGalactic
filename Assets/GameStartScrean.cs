@@ -6,39 +6,60 @@ public class GameStartScrean : MonoBehaviour
 {
     public Image FadeImage;
     public Image FadeTextImage;
+    public Image FadeAllTextImage;
 
     private void Start()
     {
-        IEnumerator FadeCoroutine()
-        {
-            yield return new WaitForSeconds(1.5f);
+        StartCoroutine(FadeCoroutine());
+    }
 
-            foreach (var p in FadeImageCoroutine(FadeTextImage, 1f)) 
-                yield return p;
+    private IEnumerator FadeCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
 
-            yield return new WaitForSeconds(2f);
-        }
-        
-        StartCoroutine()
+        // Просто вызываем корутину и возвращаем управление
+        yield return StartCoroutine(FadeImageCoroutine(FadeTextImage, 1f));
+
+        yield return new WaitForSeconds(2f);
+        yield return StartCoroutine(FadeImageCoroutine(FadeAllTextImage, 1f));
+        yield return StartCoroutine(FadeImageCoroutine(FadeImage, 1f));
     }
 
     public static IEnumerator FadeImageCoroutine(Image image, float duration)
     {
-        float elapsed = 0;
-        Color color = FadeTextImage.color;
+        float elapsed = 0f;
+        Color color = image.color;
         color.a = 0f;
-        FadeTextImage.color = color;
+        image.color = color;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            float alpha = Mathf.Clamp01(elapsed / duration);
-            color.a = alpha;
-            FadeTextImage.color = color;
+            color.a = Mathf.Clamp01(elapsed / duration);
+            image.color = color;
             yield return null;
         }
 
         color.a = 1f;
-        FadeTextImage.color = color;
+        image.color = color;
+    }
+    
+    public static IEnumerator UnFadeImageCoroutine(Image image, float duration)
+    {
+        float elapsed = 0f;
+        Color color = image.color;
+        color.a = 0f;
+        image.color = color;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsed / duration);
+            image.color = color;
+            yield return null;
+        }
+
+        color.a = 1f;
+        image.color = color;
     }
 }
