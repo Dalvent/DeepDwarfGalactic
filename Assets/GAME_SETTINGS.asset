@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: GAME_SETTINGS
   m_EditorClassIdentifier: 
   MaxFuel: 300
-  StartFuel: 2222250
+  StartFuel: 20
   FuelConsumptionRateBySecond: 9.93
   StartDiamond: 0
   FuelPerDiamond: 6
   StartDepth: 50
   MaxDepth: 5000
   MinSpeed: 1
-  MaxSpeed: 360
-  SpeedLinerAcceleration: 22
+  MaxSpeed: 60
+  SpeedLinerAcceleration: 8
   SpeedLoseFactor: 0.5
   DecayExponent: 1.2
   StartHP: 3

@@ -5,6 +5,9 @@ using UnityEngine.Serialization;
 
 public class DwarfMovement : MonoBehaviour
 {
+    public AudioSource JumpSound;
+    public AudioSource JumpBoostSound;
+    
     [Header("Components")]
     public Rigidbody2D rb;
     public CapsuleCollider2D col;
@@ -86,6 +89,7 @@ public class DwarfMovement : MonoBehaviour
         
         frameVelocity.y = force;
         _nextBounceTimer = delay;
+        JumpBoostSound.PlayWithRandomPitch();
     }
 
     private void Update()
@@ -134,6 +138,8 @@ public class DwarfMovement : MonoBehaviour
         {
             jumpToConsume = true;
             timeJumpWasPressed = time;
+            
+            JumpSound.PlayWithRandomPitch();
         }
     }
 

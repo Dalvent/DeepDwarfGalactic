@@ -16,7 +16,6 @@ public class CameraOperator : MonoBehaviour
     [Header("Shake")]
     public float ShakeReducer = 0.2f;
     public float ShakeFullPowerY = 10f;
-    public float ShakeIgnoreY = 20f;
     
     [Header("ShakeAfterUser")]
     public float ShakeAfterNitroTime = 0.12f;
@@ -34,13 +33,9 @@ public class CameraOperator : MonoBehaviour
             return;
 
         float shake = Game.Instance.DrillAccelerator.CurrentSpeed / Game.Instance.GameSettings.MaxSpeed * ShakeReducer;
-        if (Player.position.y > ShakeIgnoreY)
+        if (Player.position.y > ShakeFullPowerY)
         {
-            shake = 0;
-        }
-        else if (Player.position.y > ShakeFullPowerY)
-        {
-            var reducer = (Player.position.y - ShakeFullPowerY) / (ShakeIgnoreY - ShakeFullPowerY);
+            var reducer = (Player.position.y - ShakeFullPowerY) / ShakeFullPowerY;
             shake *= reducer;
         }
         
