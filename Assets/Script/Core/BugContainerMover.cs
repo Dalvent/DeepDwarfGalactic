@@ -99,7 +99,6 @@ public class BugContainerMover : MonoBehaviour
         if (!IsPlayerJumpOnBugs)
             return;
 
-        print($"{nameof(_isTopContainer2)} - {_isTopContainer2}");
         if (_isTopContainer2)
         {
             if (_containerWithBugs2.transform.position.y < playerY)

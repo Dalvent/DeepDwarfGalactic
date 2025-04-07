@@ -10,9 +10,6 @@ public class FuelFurnace : MonoBehaviour, IInteractable
     
     public void Interact(DwarfInteraction dwarf)
     {
-        // TODO: MAKE BLOCKING INTERACTION
-        Debug.Log("SEX WITH FURNACE WTFFFFF!");
-        
         if (Game.Instance.ThrowDiamondToFurnace())
             dwarf.dwarfSpecialMovesWithAnimation.InteractWithFurnace();
     }

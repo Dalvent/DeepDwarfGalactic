@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NitroPower: 10
+  SpriteRenderer: {fileID: 4131810655491899944}
 --- !u!60 &2009651195319993582
 PolygonCollider2D:
   m_ObjectHideFlags: 0

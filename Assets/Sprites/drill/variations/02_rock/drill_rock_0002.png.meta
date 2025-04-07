@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fb26afdc5232d664290e07c91b198884
+guid: 1a014da8f1c76e048914eddb1c2403d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6225084070320573426
-    second: end_screen3_0
+      213: -7712563810744825070
+    second: drill_rock_0002_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: end_screen3_0
+      name: drill_rock_0002_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 48
         y: 0
-        width: 1920
-        height: 1080
+        width: 995
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2fb8664eaf0f36650800000000000000
-      internalID: 6225084070320573426
+      spriteID: 21b8509b31877f490800000000000000
+      internalID: -7712563810744825070
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      end_screen3_0: 6225084070320573426
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

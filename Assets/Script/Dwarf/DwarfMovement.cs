@@ -196,9 +196,6 @@ public class DwarfMovement : MonoBehaviour
         bufferedJumpUsable = false;
         coyoteUsable = false;
         frameVelocity.y = jumpPower;
-        // Триггер анимации прыжка
-        if (Animator != null)
-            Animator.SetTrigger("Jump");
     }
 
     private void HandleDirection()

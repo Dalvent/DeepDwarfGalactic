@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     public DrillAccelerator DrillAccelerator;
     public InteractCooldownService InteractCooldownService = new();
     public GameObject Player;
+    public NitroSpawner NitroSpawner;
     public static Game Instance { get; private set; }
 
     private float _playerStartPos;
@@ -55,8 +56,11 @@ public class Game : MonoBehaviour
         if (GameStats.Diamonds <= 0)
             return false;
         
+        if (GameSettings.FuelPerDiamond == GameSettings.MaxFuel)
+            return false;
+        
         Diamonds--;
-        DrillAccelerator.NitroFuel += GameSettings.FuelPerDiamond;
+        DrillAccelerator.NitroFuel += Mathf.Min(GameSettings.FuelPerDiamond, GameSettings.MaxFuel);
         return true;
     }
     

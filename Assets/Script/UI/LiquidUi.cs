@@ -18,7 +18,6 @@ public class LiquidUi : MonoBehaviour
 
             _percent = value;
             float y = Mathf.Lerp(LiquidBottom.position.y, LiquidTop.position.y, value);
-            print(y);
             Liquid.position = Liquid.position.SetY(y);
         }
     }
