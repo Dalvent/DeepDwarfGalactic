@@ -12,6 +12,7 @@ public class GameEndScreen : MonoBehaviour
    public Image Frame1;
    public Image Frame2;
    public Image Frame3;
+   public AudioSource WinAudio;
 
    [Header("Settings")] 
    public float FadeWhiteTime;
@@ -45,6 +46,8 @@ public class GameEndScreen : MonoBehaviour
       yield return new WaitForSeconds(WhiteScreanTime);
       
       Frame1.gameObject.SetActive(true);
+
+      WinAudio.Play();
 
       // Просто вызываем корутину и возвращаем управление
       yield return StartCoroutine(UnFadeImageCoroutine(WhiteBox, FadeFirstImageTime));
