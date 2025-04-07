@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Drill down to hell, for her
+  m_text: Drill down to hell. For her.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e77cb8480e1c42549a6fdc6009672105, type: 2}
   m_sharedMaterial: {fileID: -7897744470375213900, guid: e77cb8480e1c42549a6fdc6009672105, type: 2}
@@ -781,7 +781,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -8
   m_Sprite: {fileID: 1393832500628656799, guid: fa058fb6a6cb2f241af9ebc5059e2a90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -906,7 +906,7 @@ MonoBehaviour:
   FadeTextImage: {fileID: 1722462366}
   FadeAllTextImage: {fileID: 2134298879}
   All: {fileID: 1239201423}
-  FirstDark: 0.5
+  FirstDark: 0.8
   FirstFade: 0.5
   FirstMessage: 1
   UnfadeHer: 1
@@ -2142,7 +2142,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -8
   m_Sprite: {fileID: 2641160910482085505, guid: 7af2a1f22bf054c46b0839c6ed2e4b66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2230,7 +2230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1201070002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2266,7 +2266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd97a935e37e974896d2791673e70e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  All: {fileID: 0}
+  All: {fileID: 1239201423}
   WhiteBox: {fileID: 1083707740}
   Frame1: {fileID: 270657025}
   Frame2: {fileID: 1863663862}
@@ -3870,7 +3870,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -8
   m_Sprite: {fileID: 763844458150816121, guid: 7af2a1f22bf054c46b0839c6ed2e4b66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4450,7 +4450,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -8
   m_Sprite: {fileID: 1151227875121705731, guid: fa058fb6a6cb2f241af9ebc5059e2a90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
