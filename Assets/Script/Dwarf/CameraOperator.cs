@@ -27,6 +27,9 @@ public class CameraOperator : MonoBehaviour
     
     private void Update()
     {
+        if (Game.Instance == null)
+            return;
+        
         if (UseForce()) 
             return;
 
