@@ -1,4 +1,5 @@
 using Script.Helpers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DrillingWorld : MonoBehaviour
@@ -41,6 +42,12 @@ public class DrillingWorld : MonoBehaviour
         {
             CameraShaker.shakeMagnitude = ShakeAfterPower;
             _forceShakeTime -= Time.deltaTime;
+        }
+
+        if (Game.Instance != null && Game.Instance.DrillAccelerator.UseNitro && Game.Instance.DrillAccelerator.NitroFuel <= 0)
+        {
+            Game.Instance.NitroDrillButton.Pull();
+            _lastNitroStatus = false;
         }
     }
 }

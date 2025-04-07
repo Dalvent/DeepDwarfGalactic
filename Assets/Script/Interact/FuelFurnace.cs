@@ -9,13 +9,18 @@ public class FuelFurnace : MonoBehaviour, IInteractable
     public string PopupText = "Fuel Furnace";
     [FormerlySerializedAs("InteractCooldown")] public InteractCooldownInfo interactCooldownInfo;
     public AudioSource FuelSound;
+    public AudioSource NoFuelSound;
     
     public void Interact(DwarfInteraction dwarf)
     {
         if (Game.Instance.ThrowDiamondToFurnace())
         {
             dwarf.dwarfSpecialMovesWithAnimation.InteractWithFurnace();
-            FuelSound.PlayWithRandomPitch();
+            FuelSound.PlayWithRandomPitch(0.8f, 1.2f);
+        }
+        else
+        {
+            NoFuelSound.Play();
         }
     }
 

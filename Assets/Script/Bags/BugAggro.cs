@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Script.Helpers;
+using UnityEngine;
 
 public class BugAggro : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class BugAggro : MonoBehaviour
     public float AggroSpeed = 3f;
     public float TimeLookingToPlayer = 1f;
     public LayerMask PlayerLayer;
+    
+    public GameObject AggroSign;
+    public AudioSource AggroSound;
     
     private float _normalSpeed = 0f;
     private float _lookAtPlayerTime;
@@ -28,12 +32,15 @@ public class BugAggro : MonoBehaviour
             {
                 _lookAtPlayerTime = TimeLookingToPlayer;
                 BugOnRail.Speed = AggroSpeed;
+                AggroSign.SetActive(true);
+                AggroSound.Play();
                 BugOnRail.enabled = false;
             }
             else
             {
                 _lookAtPlayerTime = 0;
                 BugOnRail.Speed = _normalSpeed;
+                AggroSign.SetActive(false);
                 BugOnRail.enabled = true;
             }
         }
@@ -42,6 +49,7 @@ public class BugAggro : MonoBehaviour
     private void Start()
     {
         _normalSpeed = BugOnRail.Speed;
+        AggroSign.SetActive(false);
     }
 
     void Update()
@@ -56,7 +64,10 @@ public class BugAggro : MonoBehaviour
         {
             _lookAtPlayerTime -= Time.deltaTime;
             if (_lookAtPlayerTime <= 0)
+            {
                 BugOnRail.enabled = true;
+                AggroSign.SetActive(false);
+            }
         }
     }
 }

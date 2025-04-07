@@ -52,12 +52,15 @@ public class DwarfSpecialMovesWithAnimation : MonoBehaviour
     public void InteractWithFurnace()
     {
         DwarfMovement.Animator.SetTrigger("FurnaceTrow");
-        /*IEnumerator Use()
+        
+        IEnumerator HackFixIfUnityWtf()
         {
             yield return new WaitForSeconds(1f);
+            DwarfInteraction.enabled = true;
+            DwarfMovement.EnableInput = true;
         }
 
-        StartCoroutine(Use());*/
+        StartCoroutine(HackFixIfUnityWtf());
     }
 
     public void OnFurnaceTrowStart()

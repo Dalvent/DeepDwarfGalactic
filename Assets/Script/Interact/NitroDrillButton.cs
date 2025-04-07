@@ -5,6 +5,8 @@ using UnityEngine.Serialization;
 
 public class NitroDrillButton : MonoBehaviour, IInteractable
 {
+    public static NitroDrillButton Button;
+    
     public Vector2 PopupOffset;
     public string PopupText = "Start/Stop Nitro";
 
@@ -19,16 +21,11 @@ public class NitroDrillButton : MonoBehaviour, IInteractable
 
     private void Start()
     {
+        Button = this;
         SyncSprites();
     }
 
-    private void Update()
-    {
-        if (Game.Instance.DrillAccelerator.NitroFuel <= 0)
-            Pull();
-    }
-
-    private void Pull()
+    public void Pull()
     {
         Game.Instance.DrillAccelerator.UseNitro = !Game.Instance.DrillAccelerator.UseNitro;
         SyncSprites();

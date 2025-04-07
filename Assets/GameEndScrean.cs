@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +11,7 @@ public class GameEndScreen : MonoBehaviour
    public Image Frame1;
    public Image Frame2;
    public Image Frame3;
-   public AudioSource WinAudio;
+   public AudioSource WhiteScreenAudio;
 
    [Header("Settings")] 
    public float FadeWhiteTime;
@@ -41,13 +40,13 @@ public class GameEndScreen : MonoBehaviour
       Frame2.gameObject.SetActive(false);
       Frame3.gameObject.SetActive(false);
       
+      WhiteScreenAudio.Play();
+      
       yield return StartCoroutine(FadeImageCoroutine(WhiteBox, FadeWhiteTime));
       All.SetActive(false);
       yield return new WaitForSeconds(WhiteScreanTime);
       
       Frame1.gameObject.SetActive(true);
-
-      WinAudio.Play();
 
       // Просто вызываем корутину и возвращаем управление
       yield return StartCoroutine(UnFadeImageCoroutine(WhiteBox, FadeFirstImageTime));

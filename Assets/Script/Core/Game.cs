@@ -1,4 +1,5 @@
 using Script;
+using Script.Helpers;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,6 +14,8 @@ public class Game : MonoBehaviour
     public InteractCooldownService InteractCooldownService = new();
     public GameObject Player;
     public NitroSpawner NitroSpawner;
+    public NitroDrillButton NitroDrillButton;
+    public AudioSource TakeNitro;
     public static Game Instance { get; private set; }
 
     private float _playerStartPos;
@@ -91,5 +94,6 @@ public class Game : MonoBehaviour
     public void CollectDiamonds(float count)
     {
         Diamonds += count;
+        TakeNitro.PlayWithRandomPitch(0.8f, 1.2f);
     }
 }

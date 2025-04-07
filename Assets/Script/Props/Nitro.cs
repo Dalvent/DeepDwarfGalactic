@@ -12,7 +12,6 @@ public class Nitro : MonoBehaviour, ICollectable
 {
     public int NitroPower = 10;
     public SpriteRenderer SpriteRenderer;
-    public AudioSource TakeNitro;
 
     public NitroInfo Info { get; set; }
 
@@ -32,6 +31,5 @@ public class Nitro : MonoBehaviour, ICollectable
         
         Game.Instance.CollectDiamonds(NitroPower);
         Game.Instance.NitroSpawner.DeleteNitro(Info);
-        TakeNitro.PlayWithRandomPitch();
     }
 }

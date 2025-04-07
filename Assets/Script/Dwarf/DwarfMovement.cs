@@ -139,7 +139,8 @@ public class DwarfMovement : MonoBehaviour
             jumpToConsume = true;
             timeJumpWasPressed = time;
             
-            JumpSound.PlayWithRandomPitch();
+            if (isGrounded)
+                JumpSound.PlayWithRandomPitch();
         }
     }
 

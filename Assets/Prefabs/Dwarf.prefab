@@ -64,8 +64,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3971899388734989934}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -1.89, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.71413, y: 135.50003, z: 1.6191344}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146,7 +146,7 @@ MonoBehaviour:
   rb: {fileID: 4763855581178811581}
   col: {fileID: 7327949472059679247}
   Animator: {fileID: 855785512984516428}
-  maxSpeed: 6
+  maxSpeed: 8.2
   acceleration: 50
   groundDeceleration: 999
   airDeceleration: 30
@@ -155,7 +155,7 @@ MonoBehaviour:
   jumpBufferTime: 0.2
   groundingForce: -1.5
   fallAcceleration: 44.1
-  maxFallSpeed: 5.8
+  maxFallSpeed: 32.97
   jumpEndEarlyGravityModifier: 3.51
   groundCheck: {fileID: 760535646950677728}
   groundCheckRadius: 0.2
@@ -275,7 +275,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.69, y: 2}
+  m_Size: {x: 1.69, y: 1.91}
   m_Direction: 0
 --- !u!114 &1964752510792463924
 MonoBehaviour:
@@ -360,7 +360,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 93622701341ed354f89f5d1f0d1f07f9, type: 3}
   m_Resource: {fileID: 8300000, guid: 93622701341ed354f89f5d1f0d1f07f9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -489,7 +489,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f47cdd0bd31367843902fe9f98a956fa, type: 3}
   m_Resource: {fileID: 8300000, guid: f47cdd0bd31367843902fe9f98a956fa, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
