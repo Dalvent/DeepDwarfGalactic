@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class WinGameTrigger : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public DwarfMovement Dwarf;
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if (transform.position.y > Dwarf.transform.position.y)
+        {
+            Game.Instance.GameUI.GameEndScreen.Show();
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -13,6 +13,7 @@ public class StartLocation : MonoBehaviour
         {
             Game.Instance.NitroSpawner.TargetSpawnNitro = TargetSpawnNitro;
             Driller.DrillSprites = NewDrillSrites;
+            gameObject.SetActive(false);
         }
     }
 }

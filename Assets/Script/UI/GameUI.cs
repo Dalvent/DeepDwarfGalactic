@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
+    public GameEndScreen GameEndScreen;
     public LiquidUi LiquidUi;
     public TMP_Text DiamondsText;
     
