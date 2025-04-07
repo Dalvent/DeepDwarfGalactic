@@ -68,6 +68,8 @@ public class DwarfMovement : MonoBehaviour
     private bool coyoteUsable;
     private float timeJumpWasPressed;
 
+    private float _nextBounceTimer;
+
     // Внутренняя структура ввода
     private struct FrameInput
     {
@@ -77,16 +79,25 @@ public class DwarfMovement : MonoBehaviour
     }
     private FrameInput frameInput;
 
-    public void Bounce(float force)
+    public void Bounce(float force, float delay)
     {
+        if (_nextBounceTimer > 0)
+            return;
+        
         frameVelocity.y = force;
+        _nextBounceTimer = delay;
     }
 
     private void Update()
     {
         time += Time.deltaTime;
+        
         GatherInput();
         UpdateAnimator();
+
+        _nextBounceTimer = _nextBounceTimer > 0
+            ? _nextBounceTimer -= Time.deltaTime
+            : 0;
     }
 
     private void GatherInput()

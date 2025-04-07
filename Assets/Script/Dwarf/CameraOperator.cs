@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CameraOperator : MonoBehaviour
 {
@@ -35,16 +34,15 @@ public class CameraOperator : MonoBehaviour
         if (Player.position.y > ShakeIgnoreY)
         {
             shake = 0;
-            CameraShaker.IsShaking = false;
         }
         else if (Player.position.y > ShakeFullPowerY)
         {
             var reducer = (Player.position.y - ShakeFullPowerY) / (ShakeIgnoreY - ShakeFullPowerY);
             shake *= reducer;
-            CameraShaker.IsShaking = true;
         }
         
         CameraShaker.shakeMagnitude = shake;
+        CameraShaker.IsShaking = true;
     }
 
     void LateUpdate()
@@ -80,7 +78,10 @@ public class CameraOperator : MonoBehaviour
         if (followY)
         {
             float targetY = Player.position.y;
-            targetPos.y = Mathf.Lerp(transform.position.y, targetY, FollowSpeed * Time.deltaTime);
+            if (MathF.Abs(transform.position.y - targetY) < 0.01f)
+                targetPos.y = targetY;
+            else
+                targetPos.y = Mathf.Lerp(transform.position.y, targetY, FollowSpeed * Time.deltaTime);
         }
         else
         {

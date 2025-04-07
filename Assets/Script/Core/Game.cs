@@ -11,7 +11,10 @@ public class Game : MonoBehaviour
     public GameSettings GameSettings;
     public DrillAccelerator DrillAccelerator;
     public InteractCooldownService InteractCooldownService = new();
+    public GameObject Player;
     public static Game Instance { get; private set; }
+
+    private float _playerStartPos;
 
     private float Diamonds
     {
@@ -35,7 +38,7 @@ public class Game : MonoBehaviour
                 return;
 
             GameStats.Depth = value;
-            GameUI.UpdateDepth(GameStats.Depth);
+            GameUI.UpdateDepth(GameStats.Depth - Player.transform.position.y + _playerStartPos);
         }
     }
     
@@ -77,6 +80,8 @@ public class Game : MonoBehaviour
         GameUI.UpdateDepth(GameStats.Depth);
         GameUI.UpdateDiamonds(GameStats.Diamonds);
         GameUI.UpdateFuel(DrillAccelerator.NitroFuel);
+
+        _playerStartPos = Player.transform.position.y;
     }
 
     public void CollectDiamonds(float count)

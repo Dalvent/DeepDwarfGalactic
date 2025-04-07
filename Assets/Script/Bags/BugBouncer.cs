@@ -7,6 +7,7 @@ public class BugBouncer : MonoBehaviour
     public CapsuleDirection2D CapsuleDirection = CapsuleDirection2D.Vertical;
     public float BounceForce = 10f;
     public LayerMask PlayerLayer;
+    public float BounceDelayForPlayer;
 
     private DwarfMovement _targetDwarfMovement;
     
@@ -32,7 +33,7 @@ public class BugBouncer : MonoBehaviour
         if (_targetDwarfMovement != dwarfMovement)
         {
             if (dwarfMovement != null)
-                dwarfMovement.Bounce(BounceForce);
+                dwarfMovement.Bounce(BounceForce, BounceDelayForPlayer);
             
             _targetDwarfMovement = dwarfMovement;
         }
