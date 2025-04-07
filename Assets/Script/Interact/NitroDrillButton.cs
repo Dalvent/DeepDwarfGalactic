@@ -1,4 +1,5 @@
-﻿using Script.Interact;
+﻿using System;
+using Script.Interact;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -18,8 +19,20 @@ public class NitroDrillButton : MonoBehaviour, IInteractable
         SyncSprites();
     }
 
+    private void Update()
+    {
+        if (Game.Instance.DrillAccelerator.NitroFuel <= 0)
+        {
+            Game.Instance.DrillAccelerator.UseNitro = !Game.Instance.DrillAccelerator.UseNitro;
+            SyncSprites();
+        }
+    }
+
     public void Interact(DwarfInteraction dwarf)
     {
+        if (Game.Instance.DrillAccelerator.NitroFuel <= 0)
+            return;
+        
         Game.Instance.DrillAccelerator.UseNitro = !Game.Instance.DrillAccelerator.UseNitro;
         SyncSprites();
     }
