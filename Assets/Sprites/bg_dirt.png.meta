@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: a195587bd7fd2aa40acf5bc0a33cd47a
+guid: 353c72ec7763d9949bcfbc7dd14168f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7344819099499793461
-    second: jump_0000_0
+      213: 5864645229692891588
+    second: bg_dirt_0
+  - first:
+      213: 2224496900264364930
+    second: bg_dirt_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jump_0000_0
+      name: bg_dirt_0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 14
-        width: 162
-        height: 224
+        x: 0
+        y: 0
+        width: 459
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53c80357e0a0ee560800000000000000
-      internalID: 7344819099499793461
+      spriteID: 4c1b881a3c7636150800000000000000
+      internalID: 5864645229692891588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_dirt_1
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 0
+        width: 556
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b073815200fde10800000000000000
+      internalID: 2224496900264364930
       vertices: []
       indices: 
       edges: []
@@ -147,8 +172,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      jump_0000_0: 7344819099499793461
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

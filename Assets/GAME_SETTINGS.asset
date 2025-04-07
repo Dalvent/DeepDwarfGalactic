@@ -15,7 +15,7 @@ MonoBehaviour:
   MaxFuel: 100
   StartFuel: 50
   FuelConsumptionRateBySecond: 9.93
-  StartDiamond: 5
+  StartDiamond: 0
   FuelPerDiamond: 10
   StartDepth: 50
   MaxDepth: 1000
