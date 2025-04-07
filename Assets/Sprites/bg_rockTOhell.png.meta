@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bg_rockTOhell_0: -6920277029779319975
+      bg_rockTOhell_1: 101450273388311770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

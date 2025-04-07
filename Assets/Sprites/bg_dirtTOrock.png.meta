@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bg_dirtTOrock_0: 1728442546459501996
+      bg_dirtTOrock_1: 820379437941122045
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
